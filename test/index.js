@@ -4,10 +4,11 @@ const pubkey = Buffer.from("0228ac32c2f6724fc865aa51f5aeb246c5c5cda42bdfd2430a20
 
 const p2pkh = liquid.payments.p2pkh({
   pubkey,
-  network: "mainnet"
+  network: liquid.networks.liquid
 })
 
 if (p2pkh !== "QDKGVB3YorozFiXoXW9MmQTUD5WjspNhcN") {
+  console.log(p2pkh)
   throw new Error("p2pkh not returns right result");
 }
 
